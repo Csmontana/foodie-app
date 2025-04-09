@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-food-item',
-  imports: [],
   templateUrl: './food-item.component.html',
-  styleUrl: './food-item.component.css'
+  styleUrls: ['./food-item.component.css']
 })
 export class FoodItemComponent {
-
+  @Input() item: any;
 }

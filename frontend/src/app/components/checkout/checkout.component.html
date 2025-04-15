@@ -1,0 +1,30 @@
+<div class="container mt-5 text-white">
+    <h2 class="mb-4">🛒 Checkout</h2>
+    <form (ngSubmit)="placeOrder()" class="checkout-form">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" [(ngModel)]="customer.fullName" name="fullName" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" [(ngModel)]="customer.email" name="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="tel" [(ngModel)]="customer.phone" name="phone" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Delivery Address</label>
+        <textarea [(ngModel)]="customer.address" name="address" class="form-control" rows="2" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Payment Method</label>
+        <select [(ngModel)]="customer.paymentMethod" name="paymentMethod" class="form-select">
+          <option value="card">💳 Card</option>
+          <option value="cash">💵 Cash on Delivery</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Place Order</button>
+    </form>
+  </div>
+  

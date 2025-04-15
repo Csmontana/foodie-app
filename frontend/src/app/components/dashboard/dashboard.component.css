@@ -1,0 +1,71 @@
+:host {
+    display: block;
+    background-color: #121e2b; /* Capital One dark navy */
+    color: #fff;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: #1e2a38;
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  .quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 2.5rem;
+  }
+  
+  .quick-links div {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .quick-links div:hover {
+    transform: scale(1.1);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Bigger icons */
+  .quick-links div .icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Bigger label */
+  .quick-links div .label {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  @media (max-width: 768px) {
+    .quick-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .quick-links div .icon {
+      font-size: 2.5rem;
+    }
+  
+    .quick-links div .label {
+      font-size: 1rem;
+    }
+  }
+  

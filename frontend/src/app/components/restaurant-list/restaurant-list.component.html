@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h2 class="text-white mb-4">Explore Dishes</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let item of foodItems">
+        <div class="card h-100 restaurant-card">
+          <img [src]="item.imageUrl" class="card-img-top" alt="{{ item.name }}">
+          <div class="card-body text-light">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="restaurant-name text-muted mb-1">{{ item.restaurant }}</p>
+            <p class="card-text">{{ item.description }}</p>
+            <p class="price text-info fw-bold">${{ item.price }}</p>
+            <button class="btn btn-outline-light btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

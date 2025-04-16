@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: heavenonearth37197
+      MYSQL_DATABASE: foodie_app
+    ports:
+      - "3307:3306"
+    networks:
+      - foodie-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    networks:
+      - foodie-net
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/foodie_app
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=heavenonearth37197
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "4200:80"
+    networks:
+      - foodie-net
+    depends_on:
+      - backend
+
+networks:
+  foodie-net:

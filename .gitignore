@@ -40,3 +40,17 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+# Java / Maven build output
+/backend/target/
+
+# Docker
+/.env
+docker-compose.override.yml
+
+# Logs
+logs/
+*.log
+
+# OS and metadata
+.env
+
